@@ -40,21 +40,7 @@ class Card extends Component {
       return (
         <div className="card">
           <div className="card-analytics-container">
-            <div className="answers-container">
-              {this.rightWrongOrNothing()}
-              <div className="your-answer">
-                <p>You said:</p><button>{this.state.clicked}</button>
-              </div>
-              <div className="correct-answer">
-                <p>Right answer: </p><button disabled>{this.state.correctAnswer['response_text']}</button>
-              </div>
-              <div className="survey-says">
-                <p className="card-survey-says">Most people said:</p><button className="survey-says-button" disabled>{this.state.highestResponse[0]}</button>
-              </div>
-            </div>
-            <div className="analytics">
-              {this.state.clicked.length > 0 ?  <PieChartWithCustomization pieState={this.state}/> : null}
-            </div>
+            "There would be analytics here if I had any"
           </div>
           <br/>
           <button onClick={this.resetState} className="response-button">Cool</button>
@@ -95,66 +81,64 @@ class Card extends Component {
     })
   }
 
-  fetchVotes = (responseClicked, cardClickedId) => {
-    fetch(API_RESPONSES)
-    .then(r=>r.json())
-    .then(responses=>{
-      let responsesForThisCard = responses.filter(response=>{
-        return response.card_id === cardClickedId
-      })
-      let totalVotes = responsesForThisCard.map(response=>{
-        return response.votes.length
-      }).reduce((a,b) => a + b, 0)
-      let responsesAndVotePercentages = []
-      responsesForThisCard.map(response=>{
-        return responsesAndVotePercentages.push([response.response_text, ((response.votes.length/totalVotes)*100).toFixed(0)+'%'])
-      })
-      let clicked = responseClicked.text
-      let responsesSorted = responsesForThisCard.sort(function(a, b){return a.votes.length - b.votes.length})
-      console.log(responsesSorted);
-      let highestOne = responsesSorted[responsesSorted.length-1]
-      let highest = []
-      highest.push(highestOne['response_text'])
-      highest.push(((highestOne['votes'].length/totalVotes)*100).toFixed(0)+'%')
-      let correctAnswer = responses.find(r=>{
-        return r.id === this.props.card.correct
-      })
-      console.log('correct', correctAnswer);
-      this.setState({
-        clicked: clicked,
-        responsesAndVotePercentages: responsesAndVotePercentages,
-        highestResponse: highest,
-        correctAnswer: correctAnswer
-      })
-    })
-    .catch(()=>console.log("Error fetching votes"))
-  }
+  // fetchVotes = (responseClicked, cardClickedId) => {
+  //   fetch(API_RESPONSES)
+  //   .then(r=>r.json())
+  //   .then(responses=>{
+  //     let responsesForThisCard = responses.filter(response=>{
+  //       return response.card_id === cardClickedId
+  //     })
+  //     let totalVotes = responsesForThisCard.map(response=>{
+  //       return response.votes.length
+  //     }).reduce((a,b) => a + b, 0)
+  //     let responsesAndVotePercentages = []
+  //     responsesForThisCard.map(response=>{
+  //       return responsesAndVotePercentages.push([response.response_text, ((response.votes.length/totalVotes)*100).toFixed(0)+'%'])
+  //     })
+  //     let clicked = responseClicked.text
+  //     let responsesSorted = responsesForThisCard.sort(function(a, b){return a.votes.length - b.votes.length})
+  //     console.log(responsesSorted);
+  //     let highestOne = responsesSorted[responsesSorted.length-1]
+  //     let highest = []
+  //     highest.push(highestOne['response_text'])
+  //     highest.push(((highestOne['votes'].length/totalVotes)*100).toFixed(0)+'%')
+  //     let correctAnswer = responses.find(r=>{
+  //       return r.id === this.props.card.correct
+  //     })
+  //     console.log('correct', correctAnswer);
+  //     this.setState({
+  //       clicked: clicked,
+  //       responsesAndVotePercentages: responsesAndVotePercentages,
+  //       highestResponse: highest,
+  //       correctAnswer: correctAnswer
+  //     })
+  //   })
+  //   .catch(()=>console.log("Error fetching votes"))
+  // }
 
-  postToVotes = (e) => {
-    console.log('');
-    console.log('posting to votes');
-    let cardClickedId = this.props.card.id
-    let responseClicked = this.props.card.responses.find(response=>{
-      return response.id === parseInt(e.currentTarget.id, 10)
-    })
-    let responseClickedId = responseClicked.id
-    fetch(API_VOTES, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        "response_id": responseClickedId,
-        "card_id": cardClickedId
-      })
-    })
-    .then(r=>r.json())
-    .then(vote=>{
-      console.log('vote posted', vote);
-      this.fetchVotes(responseClicked, cardClickedId)
-    })
-  }
+  // postToVotes = (e) => {
+  //   let cardClickedId = this.props.card.id
+  //   let responseClicked = this.props.card.responses.find(response=>{
+  //     return response.id === parseInt(e.currentTarget.id, 10)
+  //   })
+  //   let responseClickedId = responseClicked.id
+  //   fetch(API_VOTES, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       "response_id": responseClickedId,
+  //       "card_id": cardClickedId
+  //     })
+  //   })
+  //   .then(r=>r.json())
+  //   .then(vote=>{
+  //     console.log('vote posted', vote);
+  //     this.fetchVotes(responseClicked, cardClickedId)
+  //   })
+  // }
 
 
   render() {
@@ -168,3 +152,19 @@ class Card extends Component {
 }
 
 export default Card;
+
+// <div className="answers-container">
+//   {this.rightWrongOrNothing()}
+//   <div className="your-answer">
+//     <p>You said:</p><button>{this.state.clicked}</button>
+//   </div>
+//   <div className="correct-answer">
+//     <p>Right answer: </p><button disabled>{this.state.correctAnswer['response_text']}</button>
+//   </div>
+//   <div className="survey-says">
+//     <p className="card-survey-says">Most people said:</p><button className="survey-says-button" disabled>{this.state.highestResponse[0]}</button>
+//   </div>
+// </div>
+// <div className="analytics">
+//   {this.state.clicked.length > 0 ?  <PieChartWithCustomization pieState={this.state}/> : null}
+// </div>
