@@ -2,9 +2,26 @@ import React, { Component } from 'react';
 import Typist from 'react-typist-updated';
 import { bounceIn } from 'react-animations'
 import styled, { keyframes } from 'styled-components';
+import SocialMediaIcons from 'react-social-media-icons';
 
 const bounceInAnimation = keyframes`${bounceIn}`;
 const BouncyDiv = styled.div`animation: 1s ${bounceInAnimation};`;
+
+
+const socialMediaIcons = [
+  {
+    url: 'https://www.linkedin.com/in/daniellejasper/',
+    className: 'fab fa-linkedin'
+  },
+  {
+    url: 'https://github.com/dnj547',
+    className: 'fab fa-github-square'
+  },
+  {
+    url: 'https://medium.com/@devdanielle',
+    className: 'fab fa-medium'
+  },
+];
 
 class MyComponent extends Component {
 
@@ -28,8 +45,14 @@ class MyComponent extends Component {
   render() {
     return (
       <div className="my-component">
-        <div className="me-img-container">
+        <div className="me-container">
           <img src="/images/me_circle.png" alt="me"/>
+          <SocialMediaIcons
+            className="icons"
+            icons={socialMediaIcons}
+            iconSize={'100em'}
+            iconColor={'palevioletred'}
+          />
         </div>
         <div className="text-content">
           <Typist
@@ -63,6 +86,7 @@ class MyComponent extends Component {
               </div>
             </BouncyDiv>
           ) : null}
+
         </div>
       </div>
     );

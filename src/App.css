@@ -7,15 +7,23 @@ body {
 .my-component {
   display: flex;
 }
-.me-img-container img {
+.me-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+.me-container img {
   width: 500px;
   height: auto;
-  margin-top: 10%;
-  margin-left: 10%;
+  margin-bottom: 3%;
 }
 .me-img-container img:hover {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+.icons {
+  font-size: 3em;
 }
 .text-content {
   margin: auto;
