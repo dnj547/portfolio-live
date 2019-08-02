@@ -7,20 +7,68 @@ body {
 .my-component {
   display: flex;
 }
-img {
-  width: 30%;
+.me-img-container img {
+  width: 500px;
   height: auto;
-  margin-top: 3%;
-  margin-left: 3%;
+  margin-top: 10%;
+  margin-left: 10%;
 }
 .text-content {
   margin: auto;
 }
-h1 {
+.text-content h1 {
   font-family: 'Amatic SC', cursive;
   font-size: 10em;
+  margin-bottom: -30px;
 }
 p {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
+}
+.education {
+  display: flex;
+  border: 3px solid palevioletred;
+  border-radius: 15px;
+  width: 500px;
+  height: 100px;
+  margin: auto;
+  padding: 10px;
+}
+.education h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 5em;
+  margin: auto;
+}
+.fs-container {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  margin: auto 0px auto 0px;
+  padding: 10px;
+}
+.fs-container p {
+  font-weight: normal;
+  font-size: 1em;
+  margin: auto;
+}
+.fs-img {
+  width: 100%;
+  height: auto;
+  margin: auto auto 2% auto;
+}
+.lsu-container {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin: auto;
+}
+.lsu-container p {
+  font-weight: normal;
+  font-size: 1em;
+  margin: auto;
+}
+.lsu-img {
+  width: 100%;
+  height: auto;
+  margin: auto auto 2% auto;
 }
