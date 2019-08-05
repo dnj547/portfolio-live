@@ -25,7 +25,8 @@ const socialMediaIcons = [
 class MyComponent extends Component {
 
   state = {
-    doneTyping: false,
+    doneTypingHeader: false,
+    doneTypingParagraph: false,
     educationHover: false,
     doneWithEducation: false,
     skillsHover: false
@@ -43,14 +44,22 @@ class MyComponent extends Component {
     })
   }
 
-  onDoneTyping = () => {
+  onDoneTypingHeader = () => {
     this.setState({
-      doneTyping: true
+      doneTypingHeader: true
+    })
+  }
+
+  onDoneTypingParagraph = () => {
+    this.setState({
+      doneTypingParagraph: true
     })
     setTimeout(() => {
       this.setState({doneWithEducation: true});
     }, 1000)
   }
+
+
 
   render() {
     console.log('state', this.state);
@@ -69,11 +78,18 @@ class MyComponent extends Component {
           <Typist
             cursor={{show:false}}
             avgTypingDelay={90}
-            onTypingDone={this.onDoneTyping}>
+            onTypingDone={this.onDoneTypingHeader}>
             <h1>Danielle Jasper</h1>
-            <p>Hi, I'm Danielle. I'm a full-stack software developer.</p>
           </Typist>
-          {this.state.doneTyping ? (
+          {this.state.doneTypingHeader ? (
+            <Typist
+              cursor={{show:false}}
+              avgTypingDelay={40}
+              onTypingDone={this.onDoneTypingParagraph}>
+              <p>Hi, I'm Danielle. I'm a full-stack software developer.</p>
+            </Typist>
+          ) : null}
+          {this.state.doneTypingParagraph ? (
             <BouncyDiv>
               <div
                 onMouseEnter={this.toggleEducationHover}
