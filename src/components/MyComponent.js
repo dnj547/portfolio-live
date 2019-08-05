@@ -71,7 +71,7 @@ class MyComponent extends Component {
             avgTypingDelay={110}
             onTypingDone={this.onDoneTyping}>
             <h1>Danielle Jasper</h1>
-            <p>Hi, I'm Danielle.</p>
+            <p>Hi, I'm Danielle. I'm a full-stack software developer.</p>
           </Typist>
           {this.state.doneTyping ? (
             <BouncyDiv>
