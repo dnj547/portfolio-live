@@ -68,7 +68,7 @@ class MyComponent extends Component {
         <div className="text-content">
           <Typist
             cursor={{show:false}}
-            avgTypingDelay={110}
+            avgTypingDelay={90}
             onTypingDone={this.onDoneTyping}>
             <h1>Danielle Jasper</h1>
             <p>Hi, I'm Danielle. I'm a full-stack software developer.</p>
