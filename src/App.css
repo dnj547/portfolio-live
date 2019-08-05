@@ -18,7 +18,7 @@ body {
   height: auto;
   margin-bottom: 3%;
 }
-.me-img-container img:hover {
+.me-container img:hover {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
@@ -37,7 +37,7 @@ p {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
 }
-.education {
+.education, .skills {
   display: flex;
   border: 3px solid palevioletred;
   border-radius: 15px;
@@ -46,7 +46,10 @@ p {
   margin: auto;
   padding: 10px;
 }
-.education h1 {
+.skills {
+  justify-content: center;
+}
+.education h1, .skills h1 {
   font-family: 'Amatic SC', cursive;
   font-size: 5em;
   margin: auto;
@@ -83,4 +86,7 @@ p {
   width: 100%;
   height: auto;
   margin: auto auto 2% auto;
+}
+.devicon-css3-plain-wordmark, .devicon-html5-plain-wordmark, .devicon-javascript-plain, .devicon-react-original-wordmark, .devicon-ruby-plain-wordmark {
+  font-size: 6em;
 }

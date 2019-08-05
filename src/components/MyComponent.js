@@ -7,7 +7,6 @@ import SocialMediaIcons from 'react-social-media-icons';
 const bounceInAnimation = keyframes`${bounceIn}`;
 const BouncyDiv = styled.div`animation: 1s ${bounceInAnimation};`;
 
-
 const socialMediaIcons = [
   {
     url: 'https://www.linkedin.com/in/daniellejasper/',
@@ -27,7 +26,9 @@ class MyComponent extends Component {
 
   state = {
     doneTyping: false,
-    educationHover: false
+    educationHover: false,
+    doneWithEducation: false,
+    skillsHover: false
   }
 
   toggleEducationHover = () => {
@@ -36,13 +37,23 @@ class MyComponent extends Component {
     })
   }
 
+  toggleSkillsHover = () => {
+    this.setState({
+      skillsHover: !this.state.skillsHover
+    })
+  }
+
   onDoneTyping = () => {
     this.setState({
       doneTyping: true
     })
+    setTimeout(() => {
+      this.setState({doneWithEducation: true});
+    }, 1000)
   }
 
   render() {
+    console.log('state', this.state);
     return (
       <div className="my-component">
         <div className="me-container">
@@ -86,7 +97,28 @@ class MyComponent extends Component {
               </div>
             </BouncyDiv>
           ) : null}
-
+          <br/>
+          {this.state.doneWithEducation ? (
+            <BouncyDiv>
+              <div
+                onMouseEnter={this.toggleSkillsHover}
+                onMouseLeave={this.toggleSkillsHover}>
+                {!this.state.skillsHover ? (
+                  <div className="skills">
+                    <h1>Skills</h1>
+                  </div>
+                  ) : (
+                  <div className="skills">
+                    <i class="devicon-javascript-plain"></i>
+                    <i class="devicon-react-original-wordmark"></i>
+                    <i class="devicon-ruby-plain-wordmark"></i>
+                    <i className="devicon-css3-plain-wordmark"></i>
+                    <i class="devicon-html5-plain-wordmark"></i>
+                  </div>
+                  )}
+              </div>
+            </BouncyDiv>
+          ) : null}
         </div>
       </div>
     );
