@@ -47,7 +47,7 @@ p {
   padding: 10px;
 }
 .skills {
-  justify-content: center;
+  justify-content: space-around;
 }
 .education h1, .skills h1 {
   font-family: 'Amatic SC', cursive;
@@ -89,5 +89,4 @@ p {
 }
 .devicon-css3-plain-wordmark, .devicon-html5-plain-wordmark, .devicon-javascript-plain, .devicon-react-original-wordmark, .devicon-ruby-plain-wordmark {
   font-size: 6em;
-  color: #db7093;
 }

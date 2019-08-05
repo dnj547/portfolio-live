@@ -125,11 +125,11 @@ class MyComponent extends Component {
                   </div>
                   ) : (
                   <div className="skills">
-                    <i class="devicon-javascript-plain"></i>
-                    <i class="devicon-react-original-wordmark"></i>
-                    <i class="devicon-ruby-plain-wordmark"></i>
-                    <i className="devicon-css3-plain-wordmark"></i>
-                    <i class="devicon-html5-plain-wordmark"></i>
+                    <i class="devicon-javascript-plain colored"></i>
+                    <i class="devicon-react-original-wordmark colored"></i>
+                    <i class="devicon-ruby-plain-wordmark colored"></i>
+                    <i className="devicon-css3-plain-wordmark colored"></i>
+                    <i class="devicon-html5-plain-wordmark colored"></i>
                   </div>
                   )}
               </div>
