@@ -75,6 +75,7 @@ class MyComponent extends Component {
           />
         </div>
         <div className="text-content">
+          <h2 className="work-in-progress">FYI, this website is a work in progress :)</h2>
           <Typist
             cursor={{show:false}}
             avgTypingDelay={90}
