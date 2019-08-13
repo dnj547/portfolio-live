@@ -79,8 +79,7 @@ class MyComponent extends Component {
     return (
       <div className="my-component">
         <div className="me-container">
-          {/*Changed your alt to be more descriptive*/}
-          <img src="/images/me_circle.png" alt="Danielle a.k.a. The Hot Chick"/>
+          <img src="/images/me_circle.png" alt="Danielle Jasper, Full-Stack Developer"/>
           <SocialMediaIcons
             className="icons"
             icons={socialMediaIcons}
@@ -101,7 +100,7 @@ class MyComponent extends Component {
               cursor={{show:false}}
               avgTypingDelay={40}
               onTypingDone={this.onDoneTypingParagraph}>
-              {/*Remove quotes before deploying. Single quote was fucking up my colors :)*/}
+              {/*Remove quotes before deploying. Single quote was screwing up my colors in Atom*/}
               <p>"Hi, I'm Danielle. I'm a full-stack software developer."</p>
             </Typist>
           ) : null}
