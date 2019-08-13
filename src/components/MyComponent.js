@@ -32,7 +32,7 @@ class MyComponent extends Component {
     educationHover: false,
     doneWithEducation: false,
     skillsHover: false,
-    doneWithSkills: true,
+    doneWithSkills: false,
     projectsHover: false
   }
 
