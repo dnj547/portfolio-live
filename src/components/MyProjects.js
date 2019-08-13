@@ -30,7 +30,7 @@ export default class MyProjects extends Component {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <h6>Partner: <a href={this.props.data.partnerGithub} target="_blank">{this.props.data.partner}</a> | Created: {this.props.data["date-created"]}</h6>
+          <h6>Partner: <a href={this.props.data.partnerGitHub} target="_blank">{this.props.data.partner}</a> | Created: {this.props.data["date-created"]}</h6>
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
