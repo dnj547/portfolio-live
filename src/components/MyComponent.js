@@ -163,9 +163,6 @@ class MyComponent extends Component {
                   </div>
                   ) : (
                   <div className="projects">
-                    <i>Ferris</i>
-                    <i>Ferris Again</i>
-                    <i>Ferris All The Time!</i>
                     {/*<i class="devicon-javascript-plain colored"></i>
                     <i class="devicon-react-original-wordmark colored"></i>
                     <i class="devicon-ruby-plain-wordmark colored"></i>
