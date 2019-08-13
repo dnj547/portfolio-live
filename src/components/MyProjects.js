@@ -20,7 +20,7 @@ export default class MyProjects extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            {this.props.data.name}
+            {this.props.data.name} | <a href={this.props.data.github} target="_blank">GitHub</a> | <a href={this.props.data.planning} target="_blank">Plans</a>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -30,7 +30,7 @@ export default class MyProjects extends Component {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <h6>Partner: {this.props.data.partner} | Created: {this.props.data["date-created"]}</h6>
+          <h6>Partner: <a href={this.props.data.partnerGitHub} target="_blank">{this.props.data.partner}</a> | Created: {this.props.data["date-created"]}</h6>
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
@@ -40,7 +40,7 @@ export default class MyProjects extends Component {
   render() {
     return (
       <ButtonToolbar>
-        <Button variant="primary" onClick={() => this.setState({modalShow: true})}>
+        <Button variant="primary" onClick={()=>this.setState({modalShow: true})}>
           {this.props.data.name}
         </Button>
 
