@@ -79,6 +79,9 @@ class MyComponent extends Component {
   render() {
     console.log('state', this.state);
     // console.log(data);
+    const myProjects = data.map(d=>{
+      return <MyProjects data={d} />
+    })
     return (
       <div className="my-component">
         <div className="me-container">
@@ -165,12 +168,7 @@ class MyComponent extends Component {
                   </div>
                   ) : (
                   <div className="projects">
-                    <MyProjects data={data} />
-                    {/*<i class="devicon-javascript-plain colored"></i>
-                    <i class="devicon-react-original-wordmark colored"></i>
-                    <i class="devicon-ruby-plain-wordmark colored"></i>
-                    <i className="devicon-css3-plain-wordmark colored"></i>
-                    <i class="devicon-html5-plain-wordmark colored"></i>*/}
+                    {myProjects}
                   </div>
                   )}
               </div>
