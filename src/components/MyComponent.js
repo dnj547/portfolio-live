@@ -29,7 +29,9 @@ class MyComponent extends Component {
     doneTypingParagraph: false,
     educationHover: false,
     doneWithEducation: false,
-    skillsHover: false
+    skillsHover: false,
+    doneWithSkills: false,
+    projectsHover: false
   }
 
   toggleEducationHover = () => {
@@ -41,6 +43,12 @@ class MyComponent extends Component {
   toggleSkillsHover = () => {
     this.setState({
       skillsHover: !this.state.skillsHover
+    })
+  }
+
+  toggleProjectsHover = () => {
+    this.setState({
+      projectsHover: !this.state.projectsHover
     })
   }
 
@@ -57,16 +65,22 @@ class MyComponent extends Component {
     setTimeout(() => {
       this.setState({doneWithEducation: true});
     }, 1000)
+    this.onDoneWithSkills()
   }
 
-
+  onDoneWithSkills = () => {
+    setTimeout(() =>{
+      this.setState({doneWithSkills: true});
+    }, 2000)
+  }
 
   render() {
     console.log('state', this.state);
     return (
       <div className="my-component">
         <div className="me-container">
-          <img src="/images/me_circle.png" alt="me"/>
+          {/*Changed your alt to be more descriptive*/}
+          <img src="/images/me_circle.png" alt="Danielle a.k.a. The Hot Chick"/>
           <SocialMediaIcons
             className="icons"
             icons={socialMediaIcons}
@@ -87,7 +101,8 @@ class MyComponent extends Component {
               cursor={{show:false}}
               avgTypingDelay={40}
               onTypingDone={this.onDoneTypingParagraph}>
-              <p>Hi, I'm Danielle. I'm a full-stack software developer.</p>
+              {/*Remove quotes before deploying. Single quote was fucking up my colors :)*/}
+              <p>"Hi, I'm Danielle. I'm a full-stack software developer."</p>
             </Typist>
           ) : null}
           {this.state.doneTypingParagraph ? (
@@ -131,6 +146,31 @@ class MyComponent extends Component {
                     <i class="devicon-ruby-plain-wordmark colored"></i>
                     <i className="devicon-css3-plain-wordmark colored"></i>
                     <i class="devicon-html5-plain-wordmark colored"></i>
+                  </div>
+                  )}
+              </div>
+            </BouncyDiv>
+          ) : null}
+          <br/>
+          {this.state.doneWithSkills ? (
+            <BouncyDiv>
+              <div
+                onMouseEnter={this.toggleProjectsHover}
+                onMouseLeave={this.toggleProjectsHover}>
+                {!this.state.projectsHover ? (
+                  <div className="projects">
+                    <h1>Projects</h1>
+                  </div>
+                  ) : (
+                  <div className="projects">
+                    <i>Ferris</i>
+                    <i>Ferris Again</i>
+                    <i>Ferris All The Time!</i>
+                    {/*<i class="devicon-javascript-plain colored"></i>
+                    <i class="devicon-react-original-wordmark colored"></i>
+                    <i class="devicon-ruby-plain-wordmark colored"></i>
+                    <i className="devicon-css3-plain-wordmark colored"></i>
+                    <i class="devicon-html5-plain-wordmark colored"></i>*/}
                   </div>
                   )}
               </div>
