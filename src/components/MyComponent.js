@@ -3,6 +3,8 @@ import Typist from 'react-typist-updated';
 import { bounceIn } from 'react-animations'
 import styled, { keyframes } from 'styled-components';
 import SocialMediaIcons from 'react-social-media-icons';
+import data from '../data/project_data.json'
+import MyProjects from './MyProjects.js'
 
 const bounceInAnimation = keyframes`${bounceIn}`;
 const BouncyDiv = styled.div`animation: 1s ${bounceInAnimation};`;
@@ -30,7 +32,7 @@ class MyComponent extends Component {
     educationHover: false,
     doneWithEducation: false,
     skillsHover: false,
-    doneWithSkills: false,
+    doneWithSkills: true,
     projectsHover: false
   }
 
@@ -76,6 +78,7 @@ class MyComponent extends Component {
 
   render() {
     console.log('state', this.state);
+    // console.log(data);
     return (
       <div className="my-component">
         <div className="me-container">
@@ -162,6 +165,7 @@ class MyComponent extends Component {
                   </div>
                   ) : (
                   <div className="projects">
+                    <MyProjects data={data} />
                     {/*<i class="devicon-javascript-plain colored"></i>
                     <i class="devicon-react-original-wordmark colored"></i>
                     <i class="devicon-ruby-plain-wordmark colored"></i>
