@@ -78,13 +78,18 @@ class MyComponent extends Component {
 
   render() {
     console.log('state', this.state);
-    // console.log(data);
     const myProjects = data.map(d=>{
       return <MyProjects data={d} />
     })
     return (
       <div className="my-component">
         <div className="me-container">
+          <Typist
+            cursor={{show:false}}
+            avgTypingDelay={90}
+            onTypingDone={this.onDoneTypingHeader}>
+            <h1>Danielle Jasper</h1>
+          </Typist>
           <img src="/images/me_circle.png" alt="Danielle Jasper, Full-Stack Developer"/>
           <SocialMediaIcons
             className="icons"
@@ -95,12 +100,7 @@ class MyComponent extends Component {
         </div>
         <div className="text-content">
           <h2 className="work-in-progress">FYI, this website is a work in progress :)</h2>
-          <Typist
-            cursor={{show:false}}
-            avgTypingDelay={90}
-            onTypingDone={this.onDoneTypingHeader}>
-            <h1>Danielle Jasper</h1>
-          </Typist>
+
           {this.state.doneTypingHeader ? (
             <Typist
               cursor={{show:false}}

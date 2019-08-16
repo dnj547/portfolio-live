@@ -8,15 +8,17 @@ body {
   display: flex;
 }
 .me-container {
+  width: 30%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 3%;
-  margin-left: 3%;
 }
 .me-container img {
-  width: 500px;
+  width: 80%;
   height: auto;
-  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
 }
 .me-container img:hover {
   -webkit-transform: scaleX(-1);
@@ -28,9 +30,12 @@ body {
 .text-content {
   margin: auto;
 }
-.text-content h1 {
+h1 {
   font-family: 'Amatic SC', cursive;
-  font-size: 10em;
+  font-size: 5em;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
 }
 p {
   font-family: 'Roboto', sans-serif;
