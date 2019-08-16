@@ -106,72 +106,44 @@ class MyComponent extends Component {
               cursor={{show:false}}
               avgTypingDelay={40}
               onTypingDone={this.onDoneTypingParagraph}>
-              {/*Remove quotes before deploying. Single quote was screwing up my colors in Atom*/}
-              <p>"Hi, I'm Danielle. I'm a full-stack software developer."</p>
+              <p>Hi, I'm Danielle. I'm a full-stack software developer.</p>
             </Typist>
           ) : null}
           {this.state.doneTypingParagraph ? (
             <BouncyDiv>
-              <div
-                onMouseEnter={this.toggleEducationHover}
-                onMouseLeave={this.toggleEducationHover}>
-                {!this.state.educationHover ? (
-                  <div className="education">
-                    <h1>Education</h1>
-                  </div>
-                  ) : (
-                  <div className="education">
-                    <div className="fs-container">
-                      <img className="fs-img" src="/images/fs-cutout.png" alt="Flatiron School"/>
-                      <p>Software Engineering</p>
-                    </div>
-                    <div className="lsu-container">
-                      <img className="lsu-img" src="/images/lsu.png" alt="Louisiana State University"/>
-                      <p>Accounting</p>
-                    </div>
-                  </div>
-                  )}
+              <div className="section">
+                <h1>Education:</h1>
+                <div className="fs-container">
+                  <img className="fs-img" src="/images/fs-cutout.png" alt="Flatiron School"/>
+                  <p>Software Engineering</p>
+                </div>
+                <div className="lsu-container">
+                  <img className="lsu-img" src="/images/lsu.png" alt="Louisiana State University"/>
+                  <p>Accounting</p>
+                </div>
               </div>
             </BouncyDiv>
           ) : null}
           <br/>
           {this.state.doneWithEducation ? (
             <BouncyDiv>
-              <div
-                onMouseEnter={this.toggleSkillsHover}
-                onMouseLeave={this.toggleSkillsHover}>
-                {!this.state.skillsHover ? (
-                  <div className="skills">
-                    <h1>Skills</h1>
-                  </div>
-                  ) : (
-                  <div className="skills">
-                    <i class="devicon-javascript-plain colored"></i>
-                    <i class="devicon-react-original-wordmark colored"></i>
-                    <i class="devicon-ruby-plain-wordmark colored"></i>
-                    <i className="devicon-css3-plain-wordmark colored"></i>
-                    <i class="devicon-html5-plain-wordmark colored"></i>
-                  </div>
-                  )}
+              <div className="section">
+                <h1>Skills:</h1>
+                <i class="devicon-javascript-plain colored"></i>
+                <i class="devicon-react-original-wordmark colored"></i>
+                <i class="devicon-ruby-plain-wordmark colored"></i>
+                <i className="devicon-css3-plain-wordmark colored"></i>
+                <i class="devicon-html5-plain-wordmark colored"></i>
               </div>
             </BouncyDiv>
           ) : null}
           <br/>
           {this.state.doneWithSkills ? (
             <BouncyDiv>
-              <div
-                onMouseEnter={this.toggleProjectsHover}
-                onMouseLeave={this.toggleProjectsHover}>
-                {!this.state.projectsHover ? (
-                  <div className="projects">
-                    <h1>Projects</h1>
-                  </div>
-                  ) : (
-                  <div className="projects">
-                    {myProjects}
-                  </div>
-                  )}
-              </div>
+                <div className="section">
+                  <h1>Projects:</h1>
+                  {myProjects}
+                </div>
             </BouncyDiv>
           ) : null}
         </div>
