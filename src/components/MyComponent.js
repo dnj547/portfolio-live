@@ -100,7 +100,6 @@ class MyComponent extends Component {
         </div>
         <div className="text-content">
           <h2 className="work-in-progress">FYI, this website is a work in progress :)</h2>
-
           {this.state.doneTypingHeader ? (
             <Typist
               cursor={{show:false}}
@@ -109,43 +108,51 @@ class MyComponent extends Component {
               <p>Hi, I'm Danielle. I'm a full-stack software developer.</p>
             </Typist>
           ) : null}
-          {this.state.doneTypingParagraph ? (
-            <BouncyDiv>
-              <div className="section">
-                <h1>Education:</h1>
-                <div className="fs-container">
-                  <img className="fs-img" src="/images/fs-cutout.png" alt="Flatiron School"/>
-                  <p>Software Engineering</p>
-                </div>
-                <div className="lsu-container">
-                  <img className="lsu-img" src="/images/lsu.png" alt="Louisiana State University"/>
-                  <p>Accounting</p>
-                </div>
-              </div>
-            </BouncyDiv>
-          ) : null}
-          <br/>
-          {this.state.doneWithEducation ? (
-            <BouncyDiv>
-              <div className="section">
-                <h1>Skills:</h1>
-                <i class="devicon-javascript-plain colored"></i>
-                <i class="devicon-react-original-wordmark colored"></i>
-                <i class="devicon-ruby-plain-wordmark colored"></i>
-                <i className="devicon-css3-plain-wordmark colored"></i>
-                <i class="devicon-html5-plain-wordmark colored"></i>
-              </div>
-            </BouncyDiv>
-          ) : null}
-          <br/>
-          {this.state.doneWithSkills ? (
-            <BouncyDiv>
+          <div className="sections">
+            {this.state.doneTypingParagraph ? (
+              <BouncyDiv>
                 <div className="section">
-                  <h1>Projects:</h1>
-                  {myProjects}
+                  <h1>Education:</h1>
+                  <div className="education">
+                    <div className="fs-container">
+                      <img className="fs-img" src="/images/fs-cutout.png" alt="Flatiron School"/>
+                      <p>Software Engineering</p>
+                    </div>
+                    <div className="lsu-container">
+                      <img className="lsu-img" src="/images/lsu.png" alt="Louisiana State University"/>
+                      <p>Accounting</p>
+                    </div>
+                  </div>
                 </div>
-            </BouncyDiv>
-          ) : null}
+              </BouncyDiv>
+            ) : null}
+            <br/>
+            {this.state.doneWithEducation ? (
+              <BouncyDiv>
+                <div className="section">
+                  <h1>Skills:</h1>
+                  <div className="skills">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <i class="devicon-react-original-wordmark colored"></i>
+                    <i class="devicon-ruby-plain-wordmark colored"></i>
+                    <i className="devicon-css3-plain-wordmark colored"></i>
+                    <i class="devicon-html5-plain-wordmark colored"></i>
+                  </div>
+                </div>
+              </BouncyDiv>
+            ) : null}
+            <br/>
+            {this.state.doneWithSkills ? (
+              <BouncyDiv>
+                  <div className="section">
+                    <h1>Projects:</h1>
+                    <div className="projects">
+                      {myProjects}
+                    </div>
+                  </div>
+              </BouncyDiv>
+            ) : null}
+          </div>
         </div>
       </div>
     );
