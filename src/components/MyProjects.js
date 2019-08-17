@@ -21,7 +21,7 @@ export default class MyProjects extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            {this.props.data.name} | <a href={this.props.data.github} target="_blank" rel="noopener noreferrer">GitHub</a> | <a href={this.props.data.planning} target="_blank" rel="noopener noreferrer">Plans</a>
+            {this.props.data.name} | <a href={this.props.data.github} target="_blank" rel="noopener noreferrer">GitHub</a> | <a href={this.props.data.planning} target="_blank" rel="noopener noreferrer">Planning Document</a>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -32,7 +32,9 @@ export default class MyProjects extends Component {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <h6>Partner: <a href={this.props.data.partnerGitHub} target="_blank" rel="noopener noreferrer">{this.props.data.partner}</a> | Created: {this.props.data["date-created"]}</h6>
+          {this.props.data.partner ? (
+            <h6>Partner: <a href={this.props.data.partnerGitHub} target="_blank" rel="noopener noreferrer">{this.props.data.partner}</a> | Created: {this.props.data["date-created"]}</h6>
+          ) : null}
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>

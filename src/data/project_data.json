@@ -1,6 +1,16 @@
 [
   {
     "id": 1,
+    "name": "Portfolio Website",
+    "github": "https://github.com/dnj547/portfolio",
+    "planning": "https://docs.google.com/document/d/13h2ila9i0FbKlCbwZ9gls8Ew9TDCw_zVXPkI_BEVWGQ/edit?usp=sharing",
+    "video": "https://s3.us-east-2.amazonaws.com/video.9/Portfolio.mp4",
+    "date-created": "July 2019 (Mod 5)",
+    "tech-used": "Ruby on Rails & React",
+    "description": "My portfolio website (not live), including a game about my life"
+  },
+  {
+    "id": 2,
     "name": "Triviaddiction",
     "github": "https://github.com/dnj547/triviaddiction",
     "planning": "https://www.taskade.com/v/MHcaFPFs8dL637rR",
@@ -12,7 +22,7 @@
     "partnerGitHub": "https://github.com/eddgr"
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "Ott Libs",
     "github": "https://github.com/dnj547/ott-libs",
     "planning": "https://docs.google.com/document/d/1ZgnqnO5Hrzli0jghZnF7tkfjkwE8SipWS_ufEYsm5zA/edit?usp=sharing",
@@ -24,7 +34,7 @@
     "partnerGitHub": "https://github.com/ferryrules"
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "Afterthoughts",
     "github": "https://github.com/dnj547/afterthoughts",
     "planning": "https://docs.google.com/document/d/1OB9Lb4bxv6wFe5fhZtTofndJwxqRfbkEFQJwKX7Oppk/edit?usp=sharing",
@@ -36,7 +46,7 @@
     "partnerGitHub": "https://github.com/danfyfe"
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "City Guru",
     "github": "https://github.com/dnj547/city-guru-project",
     "planning": "https://docs.google.com/document/d/19d9tKtncuMeeq_Ffd_iycriPduB45gEVPSlWTXikfoc/edit?usp=sharing",
