@@ -7,6 +7,8 @@ export default class MyProjects extends Component {
 
   state ={
     modalShow: false,
+    width: (window.innerWidth/2).toString(),
+    height: ((window.innerWidth/2)*(472.5/840)).toString()
   }
 
   MyVerticallyCenteredModal = (props) => {
@@ -23,6 +25,7 @@ export default class MyProjects extends Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <iframe title={this.props.data.name} width={this.state.width} height={this.state.height} src={this.props.data.video} frameBorder="0" allowFullScreen></iframe>
           <h4>{this.props.data["tech-used"]}</h4>
           <p>
             {this.props.data.description}
