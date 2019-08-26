@@ -6,9 +6,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 export default class MyProjects extends Component {
 
   state ={
-    modalShow: false,
-    width: (window.innerWidth/2).toString(),
-    height: ((window.innerWidth/2)*(472.5/840)).toString()
+    modalShow: false
   }
 
   MyVerticallyCenteredModal = (props) => {
@@ -21,11 +19,11 @@ export default class MyProjects extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            {this.props.data.name} | <a href={this.props.data.github} target="_blank" rel="noopener noreferrer">GitHub</a> | <a href={this.props.data.planning} target="_blank" rel="noopener noreferrer">Planning Document</a>
+            {this.props.data.name} | <a href={this.props.data.github} target="_blank" rel="noopener noreferrer">GitHub</a> | <a href={this.props.data.planning} target="_blank" rel="noopener noreferrer">Planning Document</a> | <a href={this.props.data.video} target="_blank" rel="noopener noreferrer">Demo</a>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <iframe title={this.props.data.name} width={this.state.width} height={this.state.height} src={this.props.data.video} frameBorder="0" allowFullScreen></iframe>
+          <iframe title={this.props.data.name} className="iframe-video" src={this.props.data.video} frameBorder="0" allowFullScreen></iframe>
           <h4>{this.props.data["tech-used"]}</h4>
           <p>
             {this.props.data.description}

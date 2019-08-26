@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-// import Typist from 'react-typist-updated';
-// import { bounceIn } from 'react-animations'
-// import styled, { keyframes } from 'styled-components';
 import SocialMediaIcons from 'react-social-media-icons';
 import data from '../data/project_data.json'
 import MyProjects from './MyProjects.js'
-
-// const bounceInAnimation = keyframes`${bounceIn}`;
-// const BouncyDiv = styled.div`animation: 1s ${bounceInAnimation};`;
 
 const socialMediaIcons = [
   {
@@ -28,7 +22,7 @@ class MyComponent extends Component {
 
   render() {
     const myProjects = data.map(d=>{
-      return <MyProjects data={d} />
+      return <MyProjects data={d} key={d.id}/>
     })
     return (
       <div className="my-component">
@@ -63,11 +57,11 @@ class MyComponent extends Component {
               <div className="section">
                 <h1>Skills:</h1>
                 <div className="skills">
-                  <i class="devicon-javascript-plain colored"></i>
-                  <i class="devicon-react-original-wordmark colored"></i>
-                  <i class="devicon-ruby-plain-wordmark colored"></i>
+                  <i className="devicon-javascript-plain colored"></i>
+                  <i className="devicon-react-original-wordmark colored"></i>
+                  <i className="devicon-ruby-plain-wordmark colored"></i>
                   <i className="devicon-css3-plain-wordmark colored"></i>
-                  <i class="devicon-html5-plain-wordmark colored"></i>
+                  <i className="devicon-html5-plain-wordmark colored"></i>
                 </div>
               </div>
             <br/>

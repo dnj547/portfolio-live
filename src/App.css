@@ -72,6 +72,11 @@ body {
     flex-direction: column;
     justify-content: center;
   }
+  .iframe-video {
+    width: 300px;
+    height: 160px;
+    margin: auto;
+  }
 }
 
 
@@ -143,6 +148,11 @@ body {
     flex-direction: column;
     justify-content: center;
   }
+  .iframe-video {
+    width: 450px;
+    height: 300px;
+    margin: auto;
+  }
 }
 
 
@@ -211,6 +221,11 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 10px;
+  }
+  .iframe-video {
+    width: 450px;
+    height: 250px;
+    margin: auto;
   }
 }
 
@@ -281,6 +296,11 @@ body {
     justify-content: center;
     padding: 10px;
   }
+  .iframe-video {
+    width: 450px;
+    height: 250px;
+    margin: auto;
+  }
 }
 
 
@@ -349,6 +369,11 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 10px;
+  }
+  .iframe-video {
+    width: 755px;
+    height: 400px;
+    margin: auto;
   }
 }
 
