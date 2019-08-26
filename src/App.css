@@ -377,3 +377,18 @@ p {
   height: auto;
   margin: auto;
 }
+.project-button {
+  background-color: palevioletred;
+  border: none;
+}
+.project-button:hover {
+  background-color: white;
+  color: palevioletred;
+  border: none;
+}
+.me-text {
+  width: 90%;
+  height: auto;
+  font-size: 1.25em;
+  margin: auto;
+}

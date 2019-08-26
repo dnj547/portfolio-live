@@ -44,7 +44,7 @@ export default class MyProjects extends Component {
   render() {
     return (
       <ButtonToolbar>
-        <Button variant="primary" onClick={() => this.setState({modalShow: true})}>
+        <Button className="project-button" variant="primary" onClick={() => this.setState({modalShow: true})}>
           {this.props.data.name}
         </Button>
 
