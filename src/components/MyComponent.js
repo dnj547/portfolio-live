@@ -38,7 +38,6 @@ class MyComponent extends Component {
           <p className="me-text">Hi, I'm Danielle. I'm a full-stack software developer, writer, and recent graduate of Flatiron School.</p>
         </div>
         <div className="text-content">
-          <h2 className="work-in-progress">FYI, this website is a work in progress :)</h2>
           <div className="sections">
             <div className="section">
               <h1>Education:</h1>
@@ -71,6 +70,8 @@ class MyComponent extends Component {
                 {myProjects}
               </div>
             </div>
+            <br/>
+            <h2><a href="daniellejaspergame.com">Play a quick game about my life to learn more about me!</a></h2>
           </div>
         </div>
       </div>
