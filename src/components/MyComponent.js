@@ -71,7 +71,7 @@ class MyComponent extends Component {
               </div>
             </div>
             <br/>
-            <h2><a href="daniellejaspergame.com">Play a quick game about my life to learn more about me!</a></h2>
+            <h2><a href="http://www.daniellejaspergame.com">Play a quick game about my life to learn more about me!</a></h2>
           </div>
         </div>
       </div>
